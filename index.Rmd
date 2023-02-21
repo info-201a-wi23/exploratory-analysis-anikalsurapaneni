@@ -94,11 +94,41 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ``````{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
-### Chart 2
+### Chart 2: Number of Types of Sites in Different Regions
 
-Include a chart
+``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+![Type of Sites in Different Regions](/Users/liannaqiu/Desktop/Types of Regions.png)
+```
 
-Describe why you chose this chart and what information it reveals
+This chart reveals the correlation between type of heritage sites and their relative regions as of 2021, where each point represents the number of sites of a specific types of site at different regions.
+
+#Purpose
+
+We would like to know if there is any relationship between region a heritage site is located in and type of site it is (cultural, natural or mixed).
+We would think that a cultural sites in regions that experience more collateral damage or natural disasters have a higher number of heritage sites in danger.
+This chart was chosen as it compares the number of sites and their respective types between different regions.
+With the help of color categorization, we can tell that cultural sites have generally higher number of damaged sites and mixed sites don't have any damaged sites.
+
+#Insights
+
+The chart shows that there are significantly higher sites in danger for heritage sites located in Arab States and that they are mostly cultural sites.
+Africa has the second highest number of sites in danger, however, more of it are natural sites.  
+
+Mixed heritage sites are shown to have 0 sites in danger.  
+
+The chart responds to our hypothesis that cultural sites are more likely to be in danger in areas that are at higher risks for collateral damage - Arab States.  
+Example would be The Yemeni Civil War that started in 2014.  
+
+It may also be the fact that there are very few natural world heritage sites in Arab States.\
+
+As for the higher number of damaged natural sites in Africa, it may be due to pollution and exploitation of natural resources in Africa.  
+
+Mixed sites not having any damaged sites may be due to the fact that there are only 39 mixed sites out of over 1,000 sites, there may be a lower probability of being in danger.  
+
+To conclude, the chart tells us that natural sites that are in danger in Africa should be focused on more as the ratio of sites in danger and its type are not proportionate.  
+
+Even though there are more cultural sites in Africa, the number of sites in danger are mostly natural sites.
+
 
 ### Chart 3
 
