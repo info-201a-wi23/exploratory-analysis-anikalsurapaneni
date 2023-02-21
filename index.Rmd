@@ -3,6 +3,15 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
+```{r}
+  library(dplyr)
+  library(stringr)
+  library(knitr)
+  
+  whc_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-anikalsurapaneni/main/finalwhc.csv", stringsAsFactors = FALSE)
+```
+
+
 ## UNESCO World Heritage Site Analysis
 
 ### Authors
@@ -79,9 +88,18 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 
 ### Table
 
-Include a table of aggregate information
+```{r, echo = FALSE}
+  whc_sub <- whc_df %>%
+      select("Name", "date_inscribed", "danger", "category_long") %>%
+      arrange(desc(danger))
 
-Describe why you included the table and what information it reveals
+whc_sub_10 <- whc_sub %>% slice(1:10)
+
+kable(whc_sub_10)
+
+```
+
+This table reveals which of the earliest inscribed heritage sites are now considered in danger. 
 
 ### Chart 1
 
