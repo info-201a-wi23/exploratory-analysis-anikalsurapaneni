@@ -4,6 +4,7 @@ output: html_document
 
 
 
+
 ## UNESCO World Heritage Site Analysis
 
 ### Authors
@@ -101,11 +102,7 @@ This table reveals which of the earliest inscribed heritage sites are now consid
 ```{r, echo = FALSE, code = readLines("chart_1.R")}
 ```
 
-Include a chart
 
-Describe why you chose this chart and what information it reveals
-
-Here's an example of how to run an R script inside an RMarkdown file:
 
 
 
