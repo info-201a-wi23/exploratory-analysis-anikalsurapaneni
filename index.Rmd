@@ -80,7 +80,11 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 
 ### Table
 
-```{r, echo = FALSE}
+```{r, include = FALSE}
+  library("dplyr")
+  library("knitr")
+
+  whc_df = read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-anikalsurapaneni/main/finalwhc.csv")
   whc_sub <- whc_df %>%
       select("Name", "date_inscribed", "danger", "category_long") %>%
       arrange(desc(danger))
