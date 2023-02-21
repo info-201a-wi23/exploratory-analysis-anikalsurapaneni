@@ -3,14 +3,6 @@ title: "Exploratory Analysis"
 output: html_document
 
 
-```{r}
-  library(dplyr)
-  library(stringr)
-  library(knitr)
-  
-  whc_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-anikalsurapaneni/main/finalwhc.csv", stringsAsFactors = FALSE)
-```
-
 
 ## UNESCO World Heritage Site Analysis
 
@@ -102,9 +94,7 @@ kable(whc_sub_10)
 This table reveals which of the earliest inscribed heritage sites are now considered in danger. 
 
 ### Chart 1
-```{r, echo = FALSE, message=FALSE}
-source("chart_1.R")
-plot(g)
+```{r, echo = FALSE, code = readLines("chart_1.R")}
 ```
 
 Include a chart
@@ -125,6 +115,8 @@ We found that heritage sites inscribed in 1982 have the most sites that are enda
 
 
 ### Chart 2: Number of Types of Sites in Different Regions
+```{r, echo = FALSE, code = readLines("chart_2.R")}
+```
 
 
 
@@ -160,6 +152,17 @@ Even though there are more cultural sites in Africa, the number of sites in dang
 
 ### Chart 3
 
-Include a chart
+```{r, echo = FALSE, code = readLines("chart_3.R")}
+```
 
-Describe why you chose this chart and what information it reveals
+
+
+This chart shows the number of endangered sites per country with a darker blue color representing countries with more endangered sites and grey representing countries with no endangered sites. 
+
+# Purpose
+We wanted to know if the country that an endangered world heritage site was in was a place with more tourism or a country with a lower socioeconomic status. We chose a density map form because it visually shows what continents have more endangered sites tha the others, 
+
+# Insights
+- More than half of the endangered sites are in Africa.  
+- North America, South America, and Asia have far fewer endangered sites. 
+
