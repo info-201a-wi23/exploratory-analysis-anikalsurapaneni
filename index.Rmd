@@ -1,7 +1,7 @@
 ---
 title: "Exploratory Analysis"
 output: html_document
----
+
 
 ```{r}
   library(dplyr)
@@ -102,6 +102,10 @@ kable(whc_sub_10)
 This table reveals which of the earliest inscribed heritage sites are now considered in danger. 
 
 ### Chart 1
+```{r, echo = FALSE, message=FALSE}
+source("chart_1.R")
+plot(g)
+```
 
 Include a chart
 
@@ -109,9 +113,8 @@ Describe why you chose this chart and what information it reveals
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
 
-```
+
 #Purpose
 
 By comparing the number of heritage sites that are endangered to their original date of inscription, we can see if there is any relationship between the two variables. We were able to test whether or not the date of inscription impacts the endangerment of a heritage site. We are able to identify key years that impact these results, giving us the ability to explore the context behind what may have caused these different numbers of endangerment. 
@@ -123,9 +126,7 @@ We found that heritage sites inscribed in 1982 have the most sites that are enda
 
 ### Chart 2: Number of Types of Sites in Different Regions
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
-![Type of Sites in Different Regions](/Users/liannaqiu/Desktop/Types of Regions.png)
-```
+
 
 This chart reveals the correlation between type of heritage sites and their relative regions as of 2021, where each point represents the number of sites of a specific types of site at different regions.
 
