@@ -11,7 +11,7 @@ library("sf")
 
 
 # Load World Heritage Site data
-whc_sites_2021 <- read.csv("~/Documents/Info201code/exploratory-analysis-anikalsurapaneni/whc-sites-2021.csv", stringsAsFactors = FALSE)
+whc_sites_2021 <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-anikalsurapaneni/main/finalwhc.csv", stringsAsFactors = FALSE)
 
 # Load country shapefile
 country_shape <- map_data("world")
