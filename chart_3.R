@@ -7,6 +7,7 @@ library("mapproj")
 library("ggplot2")
 library("plotly")
 library("dplyr")
+library("sf")
 
 
 # Load World Heritage Site data
@@ -20,7 +21,7 @@ View(country_shape)
 country_endangerment <- whc_sites_2021 %>%
   group_by('Country.name') %>%
   filter(danger == "1") %>%
-  count(Country.name) %>%
+  count(Country.name)
 
 country_endangerment
 
@@ -28,7 +29,7 @@ country_endangerment
 country_endangerment_df <- whc_sites_2021  %>%
   group_by('Country.name') %>%
   filter(danger == "1") %>%
-  count(Country.name)
+  count(Country.name) %>%
 
 View(country_endangerment_df)
 
@@ -42,7 +43,7 @@ ggplot(country_endangerment_shape_data) +
   geom_polygon(mapping = aes(x = long, 
                              y = lat, 
                              group = group, 
-                             fill = danger)) +
+                             fill = country_endangerment$n)) +
   scale_fill_continuous(low = 'lightblue',
                         high ='blue') +
   coord_map() +
