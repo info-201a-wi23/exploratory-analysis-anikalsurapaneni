@@ -37,13 +37,14 @@ View(country_endangerment_df)
 country_endangerment_shape_data <- left_join(country_shape, 
                                              country_endangerment_df,
                                              by = c("region" = "Country.name"))
+View(country_endangerment_shape_data)
 
 # Choropleth map of number of endangered world heritage sites per country
 ggplot(country_endangerment_shape_data) +
   geom_polygon(mapping = aes(x = long, 
                              y = lat, 
                              group = group, 
-                             fill = country_endangerment$n)) +
+                             fill = country_endangerment_shape_data$n, na.rm=TRUE)) +
   scale_fill_continuous(low = 'lightblue',
                         high ='blue') +
   coord_map() +
