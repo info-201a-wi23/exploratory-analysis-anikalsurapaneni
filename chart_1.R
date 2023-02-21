@@ -5,7 +5,7 @@ library("stringr")
 library("ggplot2")
 
 
-whs_df <- read.csv("~/Downloads/whc-sites(tangibles)-2021 3.csv", stringsAsFactors = FALSE)
+whs_df <- read.csv("~/Desktop/INFO201/exploratory-analysis-anikalsurapaneni/whc-sites-2021.csv", stringsAsFactors = FALSE)
 View(whs_df)
 
 danger_per_date <- whs_df %>% 
