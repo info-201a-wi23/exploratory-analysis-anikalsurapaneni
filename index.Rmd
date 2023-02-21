@@ -3,52 +3,75 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
-## Project title
-
-Give your project a concise, interesting title that summarizes the entirety of your project
+## UNESCO World Heritage Site Analysis
 
 ### Authors
 
-Names of your team members
+Anna Li (annal27@uw.edu)  
+Andrew Rizo (arizo32@uw.edu)  
+Anjali Schatzer (anjals5@uw.edu)  
+Anika Surapaneni (anikasur@uw.edu)
 
 ### Date
 
-Winter 2022
+Winter 2023
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+For the final project, our group decided to examine the different UNESCO world heritage sites. This is important because many of the tourists that plan on visiting are unaware of their potential impact on the sites’ urbanization which can endanger them. Accordingly, we plan to use data visualization and hypothesis testing to provide endangerment information to the public.
 
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+heritage_sites, country, endangered, preservation
 
 ### Introduction  
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+> Our project will analyze data from the UNESCO World Heritage sites by using data visualization and hypothesis testing. We will be answering the following questions:
+> 1. How does the age of inscription reflect on a world heritage site’s level of endangerment?
+> 2. Which countries have the highest number of world heritage sites?
+> 3. Do area coverage of heritage sites correlate with the category of it (cultural, natural or mixed)?
+> 4. Which countries have the most endangered heritage sites?  
+
+> The UNESCO (United Nations Educational, Scientific and Cultural Organization) world heritage sites are landmarks that are natural or cultural sites with legal protection from the UN. These sites draw in millions of visitors each year to its 1,157 culturally and naturally diverse locations. Some of the most famous sites are the Great Wall of China, the Taj Mahal, Chichén Itzá, Yellowstone National Park, and the Galápagos Islands. However, with the high volume of visitors, many of whom lack awareness over the sites’ history, some of these sites have been classified as at risk for endangerment. We were originally motivated to pick this dataset out of personal interest, but after researching the current status of a lot of these sites, we hope to bring attention to these sites' endangerment. The questions that we are focusing our research on relate characteristics of these sites (ex. date inscribed and area) to endangerment and type of heritage. While UNESCO has already published the countries with the most sites and a list of the most endangered sites, there has not been a lot of analysis done connecting the data of endangered sites to area coverage, tendency of endangerment in countries with different economic statuses, or tendency of endangerment in countries that receive more tourism. By analyzing this dataset, we hope to gather information for tourists to educate them on a heritage sites’ endangerment and to bring more attention to the controllable factors like industrialization, urbanization, and tourism.
+
 
 ### Related Work  
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+> Our topic covers the different heritage sites around the world, their importance and the threats that they face.  
+> 1. https://heritagesciencejournal.springeropen.com/articles/10.1186/s40494-021-00574-5#citeas  
+> This research references the 3S space technologies that can monitor world heritage sites. Natural disasters and deforestation can put these heritage sites at risk. This technology can help people preserve these heritage sites. This source focuses on data depicting the changes in East Renell Island, one of the most endangered heritage sites in the world. The source includes a land classification system to detect current problems and those that might appear in the future.   
+> 2. https://www.smithsonianmag.com/smart-news/endangered-cultural-heritage-sites-world-monuments-fund-2022-180979665/  
+> This article lists the 25 most endangered heritage sites in the world. The data was collected by The World Monuments Fund by a panel of experts. It’s most recent update was Feburary of 2022. The WMF president argues that most of these are the result of the perils of climate change from the rising temperatures and sea levels.   
+> 3. https://www.tandfonline.com/doi/full/10.1080/20964471.2020.1853362  
+> This dataset uses an urbanization intensity index(UII) to numerically measure the urban dynamics in areas near heritage sites in the Belt and Road region. The article emphasizes the threat of fast and unplanned urban development and its impacts on sustainable development. The results determined that the average UII value at 79 heritage sites in the region increased from 0.26 to 0.29 in 15 years. It determined seven sites considered to be at risk to expanding infrastructure and “urban sprawl” (Xiao, 2020). 
 
 ### The Dataset
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+> 1. Where did you find the data? Please include a link to the data source  
+> The data can be found on Kaggle at: https://www.kaggle.com/datasets/ramjasmaurya/unesco-heritage-sites2021
+> 2. Who collected the data?  
+> Ram Jas Maurya on Kaggle uploaded the dataset on Kaggle.
+> 3. How was the data collected or generated?  
+> According to the UIS (UNESCO Institute of Statistics), UNESCO’s statistics and data are estimates collected from public information such as national publications, household surveys, official websites, and other reliable sources of data.
+> 4. Why was the data collected?  
+> UNESCO collects data for countries at all stages of development to provide a cross-national perspective on education, science and technology, culture, and communication.
+> 5. How many observations (rows) are in your data? 
+> There are 1156 rows in the dataset. 
+> 6. How many features (columns) are in the data?  
+> There are 15 columns in this dataset. 
+> 7. What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+Several questions of power can be asked when working with UNESCO’s dataset such as why did they exclude data like the amount of visitors at these sites? How did they determine the danger level of the site and why did they decide to include it in the data? Does the level of endangerment of a certain site make it more significant than other sites or does it make it less?
+> 8. What are possible limitations or problems with this data?   (at least 200 words)  
+There are many limitations that come with working with the data that is relevant to the sites presented. For example, the fact that the data collected is a collection of estimates from other sources and not collected by UNESCO themselves could be an inaccurate interpretation of the data presented. Additionally, there was not enough information for us to know what the data_end column represented, making it hard for us to interpret the data in the column, though we believe it is the possible date of removal of the heritage site. Another feature that is hard for us to work with is the short description column because of the multiple words within the description, in order to categorize it using only R and not categorizing it by hand. Unfortunately as well, we are also limited to represent the heritage site to only being cultural, natural, or mixed. If it is cultural or mixed it is not possible to know what type of culture is being represented by the heritage site, whether it is a religion, race, ancient civilization etc. with the data provided within the category column. Lastly, even though the data does have a year inscribed column, it does not include how old the heritage site itself is. Sure it was probably inscribed 50 years ago, but we beg the question of how old the heritage site itself is.
 
 ### Implications
+> Our analysis of this dataset could have numerous implications for policymakers and technologists. For example, it could help international communities preserve their heritage sites.  It would assist policymakers from various countries on which heritage sites to allocate their resources towards. Additionally, the policymakers could lead developmental projects to limit the impact of urbanization in the surrounding area of the endangered heritage sites that we specified. They would likely need to collect more extensive data on the specifics of what led to the endangerment of the heritage sites, but could use our analysis as a base. Technologists are another group that could potentially benefit from the data and our analysis of it to form the foundation of a software or application. This app could focus on increasing awareness among tourists. It could alert the users of culturally significant heritage sites near the regions they are traveling to, which may otherwise not get many tourists.
 
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)  
+
 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+> Examining and presenting data on characteristics of world heritage sites and their level of endangerment comes with two main challenges. First and foremost, the lack of data on different facets of heritage sites makes it difficult to test our hypothesis on sites and their relative endangerment level. Data excluded from the database includes the tourist population at heritage sites, climate change, urbanization, and age of sites, which are all potential factors that impact sites’ level of endangerment. Therefore, it is hard for us to draw inferences or conclusions using our current dataset, limiting possible implications that we may make. Moreover, UNESCO includes detailed statistical tables and map visualizations of world heritage sites and their properties, which would be an obstacle for us during the final presentation stage. It will be a challenge to display our findings while keeping originality due to the proficient presentation of data on the official website. 
 
 ### Summary Information
 
