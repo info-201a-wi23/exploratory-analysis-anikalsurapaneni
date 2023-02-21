@@ -4,16 +4,14 @@ library("dplyr")
 library("stringr")
 library("ggplot2")
 
-install.packages("XQuartz")
 
 whs_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-anikalsurapaneni/main/finalwhc.csv", stringsAsFactors = FALSE)
-View(whs_df)
 
 
 danger_per_date <- whs_df %>% 
   group_by(date_inscribed) %>% 
   summarize(total_danger = sum(danger))
-  View(danger_per_date)
+ 
 
  ggplot(data = danger_per_date) +
   geom_col(aes(x = date_inscribed,

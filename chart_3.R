@@ -1,13 +1,11 @@
 # chart 3
 
-install.packages("maps")
-
 library("maps")
 library("mapproj")
 library("ggplot2")
 library("plotly")
 library("dplyr")
-library("sf")
+
 
 
 # Load World Heritage Site data
@@ -15,7 +13,7 @@ whc_sites_2021 <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exp
 
 # Load country shapefile
 country_shape <- map_data("world")
-View(country_shape)
+
 
 # Count number of endangered world heritage sites per country
 country_endangerment <- whc_sites_2021 %>%
@@ -29,15 +27,15 @@ country_endangerment
 country_endangerment_df <- whc_sites_2021  %>%
   group_by('Country.name') %>%
   filter(danger == "1") %>%
-  count(Country.name) %>%
+  count(Country.name) 
 
-View(country_endangerment_df)
+
 
 # Join the `country_shape` and `country_endangerment_df` dataframes as country_endangerment_shape_data
 country_endangerment_shape_data <- left_join(country_shape, 
                                              country_endangerment_df,
                                              by = c("region" = "Country.name"))
-View(country_endangerment_shape_data)
+
 
 # Choropleth map of number of endangered world heritage sites per country
 ggplot(country_endangerment_shape_data) +

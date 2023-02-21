@@ -2,7 +2,7 @@
 title: "Exploratory Analysis"
 output: html_document
 
-
+---
 
 
 ## UNESCO World Heritage Site Analysis
@@ -99,7 +99,7 @@ kable(whc_sub_10)
 This table reveals which of the earliest inscribed heritage sites are now considered in danger. 
 
 ### Chart 1
-```{r, echo = FALSE, code = readLines("chart_1.R")}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart_1.R")}
 ```
 
 
@@ -116,7 +116,7 @@ We found that heritage sites inscribed in 1982 have the most sites that are enda
 
 
 ### Chart 2: Number of Types of Sites in Different Regions
-```{r, echo = FALSE, code = readLines("chart_2.R")}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart_2.R")}
 ```
 
 
@@ -153,7 +153,7 @@ Even though there are more cultural sites in Africa, the number of sites in dang
 
 ### Chart 3
 
-```{r, echo = FALSE, code = readLines("chart_3.R")}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart_3.R")}
 ```
 
 
