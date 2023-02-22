@@ -200,7 +200,7 @@ Even though there are more cultural sites in Africa, the number of sites in dang
 
 ### Chart 3
 
-```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart_3.R")}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, results = "hide", code = readLines("chart_3.R")}
 ```
 
 
