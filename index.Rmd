@@ -3,7 +3,7 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
-```{r}
+```{r message=FALSE, warning=FALSE, include=FALSE}
   library(dplyr)
   library(stringr)
   library(knitr)
@@ -83,23 +83,43 @@ Assuming you answer your research questions, briefly describe the expected or po
 > Examining and presenting data on characteristics of world heritage sites and their level of endangerment comes with two main challenges. First and foremost, the lack of data on different facets of heritage sites makes it difficult to test our hypothesis on sites and their relative endangerment level. Data excluded from the database includes the tourist population at heritage sites, climate change, urbanization, and age of sites, which are all potential factors that impact sites’ level of endangerment. Therefore, it is hard for us to draw inferences or conclusions using our current dataset, limiting possible implications that we may make. Moreover, UNESCO includes detailed statistical tables and map visualizations of world heritage sites and their properties, which would be an obstacle for us during the final presentation stage. It will be a challenge to display our findings while keeping originality due to the proficient presentation of data on the official website. 
 
 ### Summary Information
+```{r echo=FALSE}
+  country_with_most_sites_in_danger <- whc_df %>% filter(danger == "1") %>% count(Country.name) %>% arrange(desc(n)) %>% slice(1) %>% pull(Country.name)
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+  country_num_in_danger <- whc_df %>% filter(danger == "1", Country.name == country_with_most_sites_in_danger) %>% nrow()
 
-### Table
-
-```{r, echo = FALSE}
-  whc_sub <- whc_df %>%
-      select("Name", "date_inscribed", "danger", "category_long") %>%
-      arrange(desc(danger))
-
-whc_sub_10 <- whc_sub %>% slice(1:10)
-
-kable(whc_sub_10)
+  
+  region_num_in_danger <- whc_df %>% group_by(Region) %>% summarize(num_sites_in_danger = sum(danger == "1")) %>%  arrange(desc(num_sites_in_danger)) %>% slice(1) %>% pull(num_sites_in_danger)
+  
+  region_with_most_sites <- whc_df %>% count(Region) %>% arrange(desc(n)) %>% slice_head(n=1) %>% pull(Region)
+  
+  most_common_category <- whc_df %>% count(category_long) %>% arrange(desc(n)) %>% slice_head(n = 1) %>% pull(category_long)
+  
+  sites_in_danger <- whc_df %>% filter(danger == "1") %>% nrow()
 
 ```
 
-This table reveals which of the earliest inscribed heritage sites are now considered in danger. 
+From our analysis, we found that overall there are `sites_in_danger` total heritage sites in danger in the world. Furthermore, the region with the most sites in danger was `region_with_most_sites_in_danger` with `region_num_in_danger`. However, further analyzing the data, we actually found that the country with the most sites in danger was actually outside that region which was `country_with_most_sites_in_danger` with `country_num_in_danger`. 
+
+
+
+### Countries with the most sites in danger
+
+```{r echo=FALSE}
+  whc_sub <- whc_df %>%
+      filter(danger == "1")
+
+  top_countries_in_danger <- whc_sub %>% group_by(Country.name) %>% summarize(Sites = n()) %>% arrange(desc(Sites)) %>% slice_max(order_by = Sites, n = 8)
+
+kable(top_countries_in_danger)
+
+```
+
+This table shows the countries with the most sites in danger. 
+
+The reason why the table only displays 8 countries is because the rest of the countries only had one site in danger. Because of this, we can 
+
+
 
 ### Chart 1
 
