@@ -106,11 +106,11 @@ This table reveals which of the earliest inscribed heritage sites are now consid
 
 
 
-#Purpose
+#### Purpose
 
 By comparing the number of heritage sites that are endangered to their original date of inscription, we can see if there is any relationship between the two variables. We were able to test whether or not the date of inscription impacts the endangerment of a heritage site. We are able to identify key years that impact these results, giving us the ability to explore the context behind what may have caused these different numbers of endangerment. 
 
-#Insights
+#### Insights
 
 We found that heritage sites inscribed in 1982 have the most sites that are endangered. We also found that heritage sites that were inscribed after 2007 never had more than 1 heritage site considered to be endangered. This trend may be influenced by the heritage sites that were inscribed earlier becoming less relevant and consequently being endangered. It could also be a result of the age of the heritage site. We wondered if the graph may be biased because there could have just been more heritage sites inscribed in the 1980’s, influencing our results. However, the dataset demonstrates that this is not the case. The largest number of heritage sites were inscribed from 2000 to 2010 which had fewer sites that were endangered. 
 
@@ -123,14 +123,14 @@ We found that heritage sites inscribed in 1982 have the most sites that are enda
 
 This chart reveals the correlation between type of heritage sites and their relative regions as of 2021, where each point represents the number of sites of a specific types of site at different regions.
 
-#Purpose
+#### Purpose
 
 We would like to know if there is any relationship between region a heritage site is located in and type of site it is (cultural, natural or mixed).
 We would think that a cultural sites in regions that experience more collateral damage or natural disasters have a higher number of heritage sites in danger.
 This chart was chosen as it compares the number of sites and their respective types between different regions.
 With the help of color categorization, we can tell that cultural sites have generally higher number of damaged sites and mixed sites don't have any damaged sites.
 
-#Insights
+#### Insights
 
 The chart shows that there are significantly higher sites in danger for heritage sites located in Arab States and that they are mostly cultural sites.
 Africa has the second highest number of sites in danger, however, more of it are natural sites.  
@@ -140,7 +140,7 @@ Mixed heritage sites are shown to have 0 sites in danger.
 The chart responds to our hypothesis that cultural sites are more likely to be in danger in areas that are at higher risks for collateral damage - Arab States.  
 Example would be The Yemeni Civil War that started in 2014.  
 
-It may also be the fact that there are very few natural world heritage sites in Arab States.\
+It may also be the fact that there are very few natural world heritage sites in Arab States.
 
 As for the higher number of damaged natural sites in Africa, it may be due to pollution and exploitation of natural resources in Africa.  
 
@@ -160,10 +160,10 @@ Even though there are more cultural sites in Africa, the number of sites in dang
 
 This chart shows the number of endangered sites per country with a darker blue color representing countries with more endangered sites and grey representing countries with no endangered sites. 
 
-# Purpose
+#### Purpose
 We wanted to know if the country that an endangered world heritage site was in was a place with more tourism or a country with a lower socioeconomic status. We chose a density map form because it visually shows what continents have more endangered sites tha the others, 
 
-# Insights
+#### Insights
 - More than half of the endangered sites are in Africa.  
 - North America, South America, and Asia have far fewer endangered sites. 
 
