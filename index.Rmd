@@ -208,8 +208,12 @@ Even though there are more cultural sites in Africa, the number of sites in dang
 This chart shows the number of endangered sites per country with a darker blue color representing countries with more endangered sites and grey representing countries with no endangered sites. 
 
 #### Purpose
-We wanted to know if the country that an endangered world heritage site was in was a place with more tourism or a country with a lower socioeconomic status. We chose a density map form because it visually shows what continents have more endangered sites tha the others, 
+After looking at the endangerment data, we wanted to know which countries and continents had more endangered sites and what the relationship between them were. We questioned if the countries with more endangered sites were the ones in tourist-heavy countries, countries with a lower socioeconomic status, or those in a certain climate region. We chose a density map because it visually shows what continents have more endangered sites than the others which allows us to easily answer these questions. 
 
-#### Insights
-- More than half of the endangered sites are in Africa.  
-- North America, South America, and Asia have far fewer endangered sites. 
+#### Insights 
+ Despite having fewer heritage sites, more than half of the endangered sites are in Africa. This is because many of the countries with endangered sites in Africa have a lack of finances to support their UNESCO application and those countries that do have sites get commonly looted.  
+
+North America, South America, and Asia have far fewer endangered sites. This could be because these continents have more money spent on preservation.  
+
+Countries closer to the equator have more endangered sites. This could be a climate related issue.
+
