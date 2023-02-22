@@ -83,21 +83,42 @@ Assuming you answer your research questions, briefly describe the expected or po
 
 ### Summary 
 ```{r echo=FALSE}
+country_with_most_sites_in_danger <- whc_df %>%
+  filter(danger == "1") %>%
+  count(Country.name) %>%
+  arrange(desc(n)) %>%
+  slice(1) %>%
+  pull(Country.name)
 
-  country_with_most_sites_in_danger <- whc_df %>% filter(danger == "1") %>% count(Country.name) %>% arrange(desc(n)) %>% slice(1) %>% pull(Country.name)
+country_num_in_danger <- whc_df %>%
+  filter(danger == "1", Country.name == country_with_most_sites_in_danger) %>%
+  nrow()
 
-  country_num_in_danger <- whc_df %>% filter(danger == "1", Country.name == country_with_most_sites_in_danger) %>% nrow()
-  
-  region_num_in_danger <- whc_df %>% group_by(Region) %>% summarize(num_sites_in_danger = sum(danger == "1")) %>%  arrange(desc(num_sites_in_danger)) %>% slice(1) %>% pull(num_sites_in_danger)
-  
-  region_with_most_sites <- whc_df %>% count(Region) %>% arrange(desc(n)) %>% slice_head(n=1) %>% pull(Region)
-  
-  most_common_category <- whc_df %>% count(category_long) %>% arrange(desc(n)) %>% slice_head(n = 1) %>% pull(category_long)
-  
-  sites_in_danger <- whc_df %>% filter(danger == "1") %>% nrow()
+region_num_in_danger <- whc_df %>%
+  group_by(Region) %>%
+  summarize(num_sites_in_danger = sum(danger == "1")) %>%
+  arrange(desc(num_sites_in_danger)) %>%
+  slice(1) %>%
+  pull(num_sites_in_danger)
+
+region_with_most_sites <- whc_df %>%
+  count(Region) %>%
+  arrange(desc(n)) %>%
+  slice_head(n = 1) %>%
+  pull(Region)
+
+most_common_category <- whc_df %>%
+  count(category_long) %>%
+  arrange(desc(n)) %>%
+  slice_head(n = 1) %>%
+  pull(category_long)
+
+sites_in_danger <- whc_df %>%
+  filter(danger == "1") %>%
+  nrow()
 ```
 
-Our analysis of the world heritage site data revealed that there are a total of **`r sites_in_danger`** heritage sites currently at risk. Interestingly, we found that the region with the most sites in danger was not where we expected it to be. Instead, it was r region_with_most_sites with a total of **`r region_num_in_danger`** sites in danger. However, upon further investigation, we discovered that the country with the most sites in danger was actually located outside of that region. Specifically, it was **`r country_with_most_sites_in_danger`** with a total of **`r country_num_in_danger`** sites in danger. In other words, the amount of heritage sites in danger are all around the world and not in one single place. But also, we found that the most common category among the world heritage sites is **`r most_common_category`**. This highlights the importance of preserving our world's cultural and natural heritage, as well as the need to protect these valuable sites.
+Our analysis of the world heritage site data revealed that there are a total of **`r sites_in_danger`** heritage sites currently at risk. Interestingly, we found that the region with the most sites in danger was not where we expected it to be. Instead, it was **`r region_with_most_sites`** with a total of **`r region_num_in_danger`** sites in danger. However, upon further investigation, we discovered that the country with the most sites in danger was actually located outside of that region. Specifically, it was **`r country_with_most_sites_in_danger`** with a total of **`r country_num_in_danger`** sites in danger. In other words, the amount of heritage sites in danger are all around the world and not in one single place. But also, we found that the most common category among the world heritage sites is **`r most_common_category`**. This highlights the importance of preserving our world's cultural and natural heritage, as well as the need to protect these valuable sites.
 
 
 ### Countries with the most sites in danger
