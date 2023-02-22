@@ -99,8 +99,7 @@ Assuming you answer your research questions, briefly describe the expected or po
 
 ```
 
-From our analysis, we found that overall there are `sites_in_danger` total heritage sites in danger in the world. Furthermore, the region with the most sites in danger was `region_with_most_sites_in_danger` with `region_num_in_danger`. However, further analyzing the data, we actually found that the country with the most sites in danger was actually outside that region which was `country_with_most_sites_in_danger` with `country_num_in_danger`. 
-
+Our analysis of the world heritage site data revealed that there are a total of `sites_in_danger` heritage sites currently at risk. Interestingly, we found that the region with the most sites in danger was not where we expected it to be. Instead, it was `region_with_most_sites_in_danger` with a total of `region_num_in_danger` sites in danger. However, upon further investigation, we discovered that the country with the most sites in danger was actually located outside of that region. Specifically, it was `country_with_most_sites_in_danger` with a total of `country_num_in_danger` sites in danger. In other words, the amount of heritage sites in danger are all around the world and not in one single place. But also, we found that the most common category among the world heritage sites is `most_common_category`. This highlights the importance of preserving our world's cultural and natural heritage, as well as the need to protect these valuable sites.
 
 
 ### Countries with the most sites in danger
@@ -117,8 +116,7 @@ kable(top_countries_in_danger)
 
 This table shows the countries with the most sites in danger. 
 
-The reason why the table only displays 8 countries is because the rest of the countries only had one site in danger. Because of this, we can 
-
+This table displays the countries with the highest number of cultural and natural heritage sites in danger. This can help conservationists and policymakers decide where to focus their efforts to protect these important places. This information can serve as a guide for resource allocation and prioritization of conservation efforts. Furthermore, the table can raise awareness about the importance of preserving cultural and natural heritage sites for future generations. It highlight which countries are in most in need for action to save these sites before it's too late. Overall, this table serves as a valuable resource for anyone interested in preserving the world's cultural and natural heritage.
 
 
 ### Chart 1
