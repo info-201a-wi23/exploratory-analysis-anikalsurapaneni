@@ -1,6 +1,5 @@
 #Load database
-heritage_sites_df <- read.csv("/Users/liannaqiu/Desktop/world_heritage_data.csv", stringsAsFactors = FALSE)
-
+heritage_sites_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-anikalsurapaneni/main/finalwhc.csv", stringsAsFactors = FALSE)
 #Load library
 library("dplyr")
 library("ggplot2")
