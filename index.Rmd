@@ -3,13 +3,12 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 ```{r message=FALSE, warning=FALSE, include=FALSE}
-  library(dplyr)
-  library(stringr)
-  library(knitr)
-  
-  whc_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-anikalsurapaneni/main/finalwhc.csv", stringsAsFactors = FALSE)
+library(dplyr)
+library(stringr)
+library(knitr)
+
+whc_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-anikalsurapaneni/main/finalwhc.csv", stringsAsFactors = FALSE)
 ```
-=======
 
 
 ## UNESCO World Heritage Site Analysis
@@ -82,8 +81,9 @@ Assuming you answer your research questions, briefly describe the expected or po
 ### Limitations & Challenges
 > Examining and presenting data on characteristics of world heritage sites and their level of endangerment comes with two main challenges. First and foremost, the lack of data on different facets of heritage sites makes it difficult to test our hypothesis on sites and their relative endangerment level. Data excluded from the database includes the tourist population at heritage sites, climate change, urbanization, and age of sites, which are all potential factors that impact sites’ level of endangerment. Therefore, it is hard for us to draw inferences or conclusions using our current dataset, limiting possible implications that we may make. Moreover, UNESCO includes detailed statistical tables and map visualizations of world heritage sites and their properties, which would be an obstacle for us during the final presentation stage. It will be a challenge to display our findings while keeping originality due to the proficient presentation of data on the official website. 
 
-### Summary Information
+### Summary 
 ```{r echo=FALSE}
+
   country_with_most_sites_in_danger <- whc_df %>% filter(danger == "1") %>% count(Country.name) %>% arrange(desc(n)) %>% slice(1) %>% pull(Country.name)
 
   country_num_in_danger <- whc_df %>% filter(danger == "1", Country.name == country_with_most_sites_in_danger) %>% nrow()
@@ -97,24 +97,31 @@ Assuming you answer your research questions, briefly describe the expected or po
   sites_in_danger <- whc_df %>% filter(danger == "1") %>% nrow()
 ```
 
-Our analysis of the world heritage site data revealed that there are a total of `sites_in_danger` heritage sites currently at risk. Interestingly, we found that the region with the most sites in danger was not where we expected it to be. Instead, it was `region_with_most_sites_in_danger` with a total of `region_num_in_danger` sites in danger. However, upon further investigation, we discovered that the country with the most sites in danger was actually located outside of that region. Specifically, it was `country_with_most_sites_in_danger` with a total of `country_num_in_danger` sites in danger. In other words, the amount of heritage sites in danger are all around the world and not in one single place. But also, we found that the most common category among the world heritage sites is `most_common_category`. This highlights the importance of preserving our world's cultural and natural heritage, as well as the need to protect these valuable sites.
+Our analysis of the world heritage site data revealed that there are a total of **`r sites_in_danger`** heritage sites currently at risk. Interestingly, we found that the region with the most sites in danger was not where we expected it to be. Instead, it was r region_with_most_sites with a total of **`r region_num_in_danger`** sites in danger. However, upon further investigation, we discovered that the country with the most sites in danger was actually located outside of that region. Specifically, it was **`r country_with_most_sites_in_danger`** with a total of **`r country_num_in_danger`** sites in danger. In other words, the amount of heritage sites in danger are all around the world and not in one single place. But also, we found that the most common category among the world heritage sites is **`r most_common_category`**. This highlights the importance of preserving our world's cultural and natural heritage, as well as the need to protect these valuable sites.
 
 
 ### Countries with the most sites in danger
 
 ```{r echo=FALSE}
-  whc_sub <- whc_df %>%
-      filter(danger == "1")
+whc_sub <- whc_df %>%
+  filter(danger == "1")
 
-  top_countries_in_danger <- whc_sub %>% group_by(Country.name) %>% summarize(Sites = n()) %>% arrange(desc(Sites)) %>% slice_max(order_by = Sites, n = 8)
+top_countries_in_danger <- whc_sub %>%
+  group_by(Country.name) %>%
+  summarize(Sites = n()) %>%
+  arrange(desc(Sites)) %>%
+  slice_max(order_by = Sites, n = 8)
 
 kable(top_countries_in_danger)
-
 ```
 
 This table shows the countries with the most sites in danger. 
 
-This table displays the countries with the highest number of cultural and natural heritage sites in danger. This can help conservationists and policymakers decide where to focus their efforts to protect these important places. This information can serve as a guide for resource allocation and prioritization of conservation efforts. Furthermore, the table can raise awareness about the importance of preserving cultural and natural heritage sites for future generations. It highlight which countries are in most in need for action to save these sites before it's too late. Overall, this table serves as a valuable resource for anyone interested in preserving the world's cultural and natural heritage.
+#### Purpose
+This information can serve as a guide for resource allocation and prioritization of conservation efforts. Furthermore, the table can raise awareness about the importance of preserving cultural and natural heritage sites for future generations. It highlight which countries are in most in need for action to save these sites before it's too late. Overall, this table serves as a valuable resource for anyone interested in preserving the world's cultural and natural heritage.
+
+#### Insight 
+This table displays the countries with the highest number of cultural and natural heritage sites in danger. This can help conservationists and policymakers decide where to focus their efforts to protect these important places. 
 
 
 ### Chart 1
@@ -185,4 +192,3 @@ We wanted to know if the country that an endangered world heritage site was in w
 #### Insights
 - More than half of the endangered sites are in Africa.  
 - North America, South America, and Asia have far fewer endangered sites. 
-
